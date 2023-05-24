@@ -11467,11 +11467,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tomvh\\Documents\\School\\S3 - 2023\\SoundSensei project\\webapi\\Backend.csproj",
+      "projectUniqueName": "C:\\Users\\tomvh\\Documents\\School\\S3-2023\\SoundSensei project\\SoundSenseiApi\\Backend.csproj",
       "projectName": "Backend",
-      "projectPath": "C:\\Users\\tomvh\\Documents\\School\\S3 - 2023\\SoundSensei project\\webapi\\Backend.csproj",
+      "projectPath": "C:\\Users\\tomvh\\Documents\\School\\S3-2023\\SoundSensei project\\SoundSenseiApi\\Backend.csproj",
       "packagesPath": "C:\\Users\\tomvh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tomvh\\Documents\\School\\S3 - 2023\\SoundSensei project\\webapi\\obj\\",
+      "outputPath": "C:\\Users\\tomvh\\Documents\\School\\S3-2023\\SoundSensei project\\SoundSenseiApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
