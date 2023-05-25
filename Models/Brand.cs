@@ -8,5 +8,7 @@ namespace Backend.Models
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
+        [Required]
+        public string BrandImageLink { get; set; }
     }
 }

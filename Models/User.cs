@@ -16,6 +16,9 @@ namespace Backend.Models
         [Required]
         public string Email { get; set; }
 
+        [Required]
+        public string UserImageLink { get; set; }
+
         public ICollection<HasProduct> HasProducts { get; set; }
         public ICollection<WantProduct> WantProducts { get; set; }
 

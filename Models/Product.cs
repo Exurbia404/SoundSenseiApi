@@ -16,5 +16,7 @@ namespace Backend.Models
         
         public int brand_id { get; set; }
 
+        public string ProductImageLink { get; set; }
+
     }
 }
