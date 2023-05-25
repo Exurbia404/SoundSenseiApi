@@ -95,5 +95,24 @@ namespace Backend.Controllers
 
             return user;
         }
+
+        [HttpPost]
+        [Route("/api/Authenticate")]
+        public int Authenticate(string email, string password)
+        {
+            // Retrieve the user from the database using the provided email
+            var user = _context.Users.FirstOrDefault(u => u.Email == email);
+
+            if (user != null)
+            {
+                // Compare the provided password with the password stored in the database
+                if (user.Password == password)
+                {
+                    return user.Id;
+                }
+            }
+
+            return 0;
+        }
     }
 }
