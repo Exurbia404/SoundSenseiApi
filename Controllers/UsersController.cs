@@ -8,11 +8,11 @@ namespace Backend.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class UserController : ControllerBase
+    public class UsersController : ControllerBase
     {
         private readonly SoundSenseiContext _context;
 
-        public UserController(SoundSenseiContext context)
+        public UsersController(SoundSenseiContext context)
         {
             _context = context;
         }
