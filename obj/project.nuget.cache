@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "W3D30XZlYnOCP41P1J8cF8jX5Lqzk+M+XSpXPlpSBTBspVH/bsxO+I5KtLAI6HG1an3TiXBAMNUxclkXE8gALA==",
+  "dgSpecHash": "rwb2ihUc4xW9xD1g993V++dKQ7e7UAGBs2y+Qta6WsT1+BvsEnikX1I6C2yqV301AOmyfY5UER+jJQjnkt5vnQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tomvh\\Documents\\School\\S3-2023\\SoundSensei project\\SoundSenseiApi\\Backend.csproj",
+  "projectFilePath": "C:\\Users\\tomvh\\Documents\\School\\SoundSenseiApi\\Backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tomvh\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\tomvh\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

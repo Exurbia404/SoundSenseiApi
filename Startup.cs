@@ -1,12 +1,5 @@
 ﻿using Backend.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Backend.Models;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
-using Microsoft.OpenApi.Models;
-using Swashbuckle.AspNetCore.SwaggerGen;
-using Swashbuckle.AspNetCore.SwaggerUI;
 
 namespace Backend;
 public class Startup
@@ -32,9 +25,9 @@ public class Startup
             options.AddPolicy(name: "_myAllowSpecificOrigins",
                 policy =>
                 {
-                    policy.WithOrigins("https://localhost:5002")
-                        .AllowAnyHeader()
-                        .AllowAnyMethod();
+                    policy.AllowAnyOrigin()
+                          .AllowAnyHeader()
+                          .AllowAnyMethod();
                 });
         });
 
