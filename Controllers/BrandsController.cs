@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Backend.Models;
 using Backend.Data;
@@ -14,11 +9,11 @@ namespace Backend.Controllers
     [ApiController]
     public class BrandsController : ControllerBase
     {
-        private readonly SoundSenseiContext _context;
+        public SoundSenseiContext _context;
 
-        public BrandsController(SoundSenseiContext context)
+        public BrandsController(SoundSenseiContext dataContext)
         {
-            _context = context;
+            _context = dataContext;
         }
 
         // GET: api/Brands
