@@ -20,7 +20,7 @@ namespace Backend.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<User>> GetUsers()
         {
-            return _context.Users.ToList();
+            return Ok(_context.Users.ToList());
         }
 
         [HttpGet("{id}")]
@@ -33,7 +33,7 @@ namespace Backend.Controllers
                 return NotFound();
             }
 
-            return user;
+            return Ok(user);
         }
 
         [HttpPost]
@@ -58,6 +58,10 @@ namespace Backend.Controllers
             // Clear existing lists before adding new ones
             _context.HasProducts.RemoveRange(_context.HasProducts.Where(hp => hp.UserId == id));
             _context.WantProducts.RemoveRange(_context.WantProducts.Where(wp => wp.UserId == id));
+
+            // Ensure that the collections are not null
+            user.HasProducts ??= new List<HasProduct>();
+            user.WantProducts ??= new List<WantProduct>();
 
             // Add new HasProducts to the database
             foreach (var hasProduct in user.HasProducts)
