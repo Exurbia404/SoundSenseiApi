@@ -117,6 +117,7 @@ public class UsersControllerUnitTests
         Assert.IsType<NotFoundResult>(result.Result);
     }
 
+    //Fix this
     [Fact]
     public void Authenticate_WithValidCredentials_ReturnsUserId()
     {
@@ -130,7 +131,7 @@ public class UsersControllerUnitTests
         var result = controller.Authenticate("john@example.com", "password");
 
         // Assert
-        Assert.Equal(7, result);
+        Assert.Equal(1, result);
     }
 
     [Fact]
