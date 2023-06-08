@@ -19,8 +19,8 @@ namespace Backend.Models
         [Required]
         public string UserImageLink { get; set; }
 
-        public ICollection<HasProduct> HasProducts { get; set; }
-        public ICollection<WantProduct> WantProducts { get; set; }
+        public string WantProducts { get; set; }
 
+        public string HasProducts { get; set; }
     }
 }

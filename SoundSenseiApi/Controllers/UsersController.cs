@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Backend.Data;
 using Backend.Models;
+using Microsoft.CodeAnalysis;
 
 namespace Backend.Controllers
 {
@@ -55,30 +56,11 @@ namespace Backend.Controllers
 
             _context.Entry(user).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
 
-            // Clear existing lists before adding new ones
-            _context.HasProducts.RemoveRange(_context.HasProducts.Where(hp => hp.UserId == id));
-            _context.WantProducts.RemoveRange(_context.WantProducts.Where(wp => wp.UserId == id));
-
-            // Ensure that the collections are not null
-            user.HasProducts ??= new List<HasProduct>();
-            user.WantProducts ??= new List<WantProduct>();
-
-            // Add new HasProducts to the database
-            foreach (var hasProduct in user.HasProducts)
-            {
-                _context.HasProducts.Add(new HasProduct { UserId = id, ProductId = hasProduct.Id });
-            }
-
-            // Add new WantProducts to the database
-            foreach (var wantProduct in user.WantProducts)
-            {
-                _context.WantProducts.Add(new WantProduct { UserId = id, ProductId = wantProduct.Id });
-            }
-
             _context.SaveChanges();
 
             return NoContent();
         }
+
 
         [HttpDelete("{id}")]
         public ActionResult<User> DeleteUser(int id)
@@ -118,5 +100,60 @@ namespace Backend.Controllers
 
             return 0;
         }
+
+        [HttpPost]
+        [Route("/api/AddHasProduct")]
+        public void AddHasProduct(int userId, int productId)
+        {
+            _context.Users.Find(userId).HasProducts += "," + productId;
+            _context.SaveChanges();
+        }
+
+        [HttpPost]
+        [Route("/api/RemoveHasProduct")]
+        public void RemoveHasProduct(int userId, int productId)
+        {
+            var user = _context.Users.Find(userId);
+
+            if (user != null)
+            {
+                string hasProducts = user.HasProducts;
+
+                // Remove the disliked animal from the likedAnimals string
+                string newLikedAnimalsString = string.Join(",", hasProducts.Split(',')
+                    .Where(product => product != productId.ToString()));
+
+                user.HasProducts = newLikedAnimalsString;
+                _context.SaveChanges();
+            }
+        }
+
+        [HttpPost]
+        [Route("/api/AddWantProduct")]
+        public void AddWantProduct(int userId, int productId)
+        {
+            _context.Users.Find(userId).WantProducts += "," + productId;
+            _context.SaveChanges();
+        }
+
+        [HttpPost]
+        [Route("/api/RemoveWantProduct")]
+        public void RemoveWantProduct(int userId, int productId)
+        {
+            var user = _context.Users.Find(userId);
+
+            if (user != null)
+            {
+                string hasProducts = user.HasProducts;
+
+                // Remove the disliked animal from the likedAnimals string
+                string newLikedAnimalsString = string.Join(",", hasProducts.Split(',')
+                    .Where(product => product != productId.ToString()));
+
+                user.HasProducts = newLikedAnimalsString;
+                _context.SaveChanges();
+            }
+        }
+
     }
 }
