@@ -35,7 +35,7 @@ public class UsersControllerUnitTests
     {
         // Arrange
         var controller = new UsersController(_context);
-        var user = new User { Id = 1, Username = "John", Password = "password", Email = "john@example.com", UserImageLink = "image.jpg" };
+        var user = new User { Id = 1, Username = "John", Password = "password", Email = "john@example.com", UserImageLink = "image.jpg", WantProducts = "", HasProducts = "" };
         _context.Users.Add(user);
         _context.SaveChanges();
 
@@ -64,7 +64,7 @@ public class UsersControllerUnitTests
     {
         // Arrange
         var controller = new UsersController(_context);
-        var user = new User { Username = "John", Password = "password", Email = "john@example.com", UserImageLink = "image.jpg" };
+        var user = new User { Username = "John", Password = "password", Email = "john@example.com", UserImageLink = "image.jpg", WantProducts = "", HasProducts = "" };
 
         // Act
         var result = controller.CreateUser(user);
@@ -79,7 +79,7 @@ public class UsersControllerUnitTests
         // Arrange
         var controller = new UsersController(_context);
         var invalidId = 999;
-        var user = new User { Id = 1, Username = "John", Password = "123456", Email = "john@example.com", UserImageLink = "image.jpg" };
+        var user = new User { Id = 1, Username = "John", Password = "123456", Email = "john@example.com", UserImageLink = "image.jpg", WantProducts = "", HasProducts = "" };
 
         // Act
         var result = controller.UpdateUser(invalidId, user);
@@ -93,7 +93,7 @@ public class UsersControllerUnitTests
     {
         // Arrange
         var controller = new UsersController(_context);
-        var user = new User { Id = 5, Username = "John", Password = "password", Email = "john@example.com", UserImageLink = "image.jpg" };
+        var user = new User { Id = 5, Username = "John", Password = "password", Email = "john@example.com", UserImageLink = "image.jpg", WantProducts = "", HasProducts = "" };
         _context.Users.Add(user);
         _context.SaveChanges();
 
@@ -123,7 +123,7 @@ public class UsersControllerUnitTests
     {
         // Arrange
         var controller = new UsersController(_context);
-        var user = new User { Id = 7, Username = "John", Password = "password", Email = "john@example.com", UserImageLink = "image.jpg" };
+        var user = new User { Id = 7, Username = "John", Password = "password", Email = "john@example.com", UserImageLink = "image.jpg", WantProducts = "", HasProducts = "" };
         _context.Users.Add(user);
         _context.SaveChanges();
 
@@ -139,7 +139,7 @@ public class UsersControllerUnitTests
     {
         // Arrange
         var controller = new UsersController(_context);
-        var user = new User { Id = 8, Username = "John", Password = "password", Email = "john@example.com", UserImageLink = "image.jpg" };
+        var user = new User { Id = 8, Username = "John", Password = "password", Email = "john@example.com", UserImageLink = "image.jpg", WantProducts = "", HasProducts = ""};
         _context.Users.Add(user);
         _context.SaveChanges();
 
