@@ -64,7 +64,7 @@ jobs:
       - name: Publish Test Results
         uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: ./TestResults/*.xml
+          sarif_file: *.xml
 
   publish-code-coverage:
     needs: build
